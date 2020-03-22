@@ -1,0 +1,13 @@
+name: assigner
+
+on: [pull_request]
+
+jobs:
+    autoassign:
+        runs-on: ubuntu-latest
+        name: Assign the users in PR
+        steps:
+            - name: Pull request user assigner
+              uses: txabman42/pr-assign-reviewers@master
+              with:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
